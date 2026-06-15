@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Pinball - Cyberpunk Arcade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="ui-layer">
+            <div class="header">
+                <div class="score-container">
+                    <span class="label">PLAYER: <span id="player-name-display">GUEST</span></span>
+                    <span class="label">HIGH SCORE: <span id="high-score">000,000</span></span>
+                    <span class="label">SCORE</span>
+                    <span id="score">000,000</span>
+                </div>
+                <div class="balls-container">
+                    <span class="label">BALLS</span>
+                    <div id="ball-indicators">
+                        <div class="ball-light active"></div>
+                        <div class="ball-light active"></div>
+                        <div class="ball-light active"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="message-display">READY</div>
+
+            <div class="footer">
+                <div class="controls-hint">
+                    <span>[A/D] FLIPPERS</span>
+                    <span>[SPACE] LAUNCH</span>
+                </div>
+                <div id="launch-gauge-container">
+                    <div class="label">LAUNCH POWER</div>
+                    <div id="launch-gauge"></div>
+                </div>
+                <div id="shield-gauge-container">
+                    <div class="label">ENERGY SHIELD</div>
+                    <div id="shield-gauge-outer">
+                        <div id="shield-gauge"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Section -->
+            <div id="leaderboard-panel">
+                <div class="label" style="color: var(--neon-pink); border-bottom: 1px solid; margin-bottom: 5px;">HALL OF FAME</div>
+                <div id="leaderboard-list">
+                    <!-- Rankings will be injected here -->
+                </div>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+    <!-- User Registration Modal -->
+    <div id="user-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="neon-text">NEO PINBALL</h2>
+            <p>ENTER PILOT NAME</p>
+            <input type="text" id="username-input" placeholder="NAME..." maxlength="10">
+            <button id="start-register-btn" class="neon-button">REGISTER</button>
+        </div>
+    </div>
+
+    <!-- Matter.js Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <!-- Game Logic -->
+    <script src="main.js"></script>
+</body>
+
+</html>
